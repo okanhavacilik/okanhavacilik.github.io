@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Topluluk Başvurusu | Okan Havacılık Topluluğu</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 40px 20px;
+      font-family: Arial, sans-serif;
+      color: #f3f7fa;
+      background:
+        radial-gradient(circle at top right, #0c315d, transparent 45%),
+        #07182d;
+    }
+
+    .form-container {
+      width: min(760px, 100%);
+      margin: auto;
+      padding: 35px;
+      border: 1px solid rgba(114, 210, 244, 0.3);
+      border-radius: 18px;
+      background: rgba(12, 49, 93, 0.75);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+      color: #72d2f4;
+      text-decoration: none;
+    }
+
+    .form-header {
+      margin-bottom: 30px;
+    }
+
+    .form-header span {
+      color: #72d2f4;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .form-header h1 {
+      margin: 10px 0;
+      font-size: clamp(30px, 6vw, 48px);
+    }
+
+    .form-header p {
+      color: #b8cddd;
+      line-height: 1.6;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      color: #f3f7fa;
+      border: 1px solid rgba(114, 210, 244, 0.45);
+      border-radius: 8px;
+      outline: none;
+      background: #07182d;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #72d2f4;
+      box-shadow: 0 0 0 3px rgba(114, 210, 244, 0.12);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .consent-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .consent-group input {
+      width: auto;
+      margin-top: 4px;
+    }
+
+    .consent-group label {
+      color: #c9d8e3;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.5;
+    }
+
+    .submit-button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 15px;
+      color: #07182d;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border: 0;
+      border-radius: 8px;
+      background: #72d2f4;
+    }
+
+    .submit-button:hover {
+      background: #43b8e8;
+    }
+
+    .submit-button:disabled {
+      cursor: wait;
+      opacity: 0.65;
+    }
+
+    #form-message {
+      display: none;
+      margin-top: 18px;
+      padding: 14px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 650px) {
+      .form-container {
+        padding: 24px 18px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full-width {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="form-container">
+    <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+
+    <header class="form-header">
+      <span>ARAMIZA KATIL</span>
+      <h1>Topluluk Üyeliği</h1>
+
+      <p>
+        Havacılığa ilgi duyan, etkinliklerimize katılmak ve
+        topluluğumuzun bir parçası olmak isteyen tüm Okan
+        Üniversitesi öğrencilerini bekliyoruz.
+      </p>
+    </header>
+
+    <form id="application-form" data-application-type="topluluk">
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="full-name">Ad Soyad *</label>
+
+          <input
+            id="full-name"
+            name="full_name"
+            type="text"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="student-number">Öğrenci Numarası *</label>
+
+          <input
+            id="student-number"
+            name="student_number"
+            type="text"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-posta Adresi *</label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+       <div class="form-group">
+  <label for="phone">
+    Telefon Numarası
+    <span style="font-size: 12px; font-weight: normal;">
+      (Lütfen 0 ile başlayarak giriniz.)
+    </span>
+  </label>
+
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    placeholder="05XX XXX XX XX"
+    pattern="0[0-9]{10}"
+    maxlength="11"
+    inputmode="numeric"
+  >
+</div>
+
+        <div class="form-group">
+          <label for="department">Bölüm *</label>
+
+          <input
+            id="department"
+            name="department"
+            type="text"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="class-level">Sınıf *</label>
+
+          <select id="class-level" name="class_level" required>
+            <option value="">Seçiniz</option>
+            <option value="Hazırlık">Hazırlık</option>
+            <option value="1. Sınıf">1. Sınıf</option>
+            <option value="2. Sınıf">2. Sınıf</option>
+            <option value="3. Sınıf">3. Sınıf</option>
+            <option value="4. Sınıf">4. Sınıf</option>
+            <option value="Mezun">Mezun</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="motivation">
+            Topluluğumuza neden katılmak istiyorsunuz? *
+          </label>
+
+          <textarea
+            id="motivation"
+            name="motivation"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="interests">
+            Havacılık alanında en çok hangi konular ilginizi çekiyor?
+          </label>
+
+          <textarea
+            id="interests"
+            name="interests"
+          ></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <div class="consent-group">
+            <input
+              id="privacy-consent"
+              name="privacy_consent"
+              type="checkbox"
+              required
+            >
+
+            <label for="privacy-consent">
+              Başvuru kapsamında paylaştığım bilgilerin Okan Havacılık
+              Topluluğu tarafından başvuru ve iletişim süreçleri amacıyla
+              kullanılmasını kabul ediyorum.
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button id="submit-button" class="submit-button" type="submit">
+        Başvuruyu Gönder
+      </button>
+
+      <p id="form-message" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="basvuru.js"></script>
+</body>
+</html>

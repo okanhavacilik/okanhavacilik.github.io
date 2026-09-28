@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>
+        Yönetici Girişi | Okan Havacılık Topluluğu
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body class="admin-login-page">
+
+    <a href="index.html"
+       class="admin-back-link">
+
+        ← Ana sayfaya dön
+
+    </a>
+
+
+    <main class="admin-login-wrapper">
+
+        <section class="admin-login-card">
+
+            <div class="admin-login-icon">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+
+            <div class="admin-login-label">
+                Yetkili Erişimi
+            </div>
+
+            <h1>Yönetici Girişi</h1>
+
+            <p>
+                Başvuru paneline ulaşmak için yönetici
+                hesabınızla giriş yapın.
+            </p>
+
+
+            <form id="adminLoginForm"
+                  class="admin-login-form">
+
+                <div class="admin-form-group">
+
+                    <label for="adminEmail">
+                        E-posta adresi
+                    </label>
+
+                    <div class="admin-input-wrapper">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input type="email"
+                               id="adminEmail"
+                               name="email"
+                               autocomplete="email"
+                               placeholder="E-posta adresinizi yazın"
+                               required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label for="adminPassword">
+                        Şifre
+                    </label>
+
+                    <div class="admin-input-wrapper">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input type="password"
+                               id="adminPassword"
+                               name="password"
+                               autocomplete="current-password"
+                               placeholder="Şifrenizi yazın"
+                               required>
+
+                        <button type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Şifreyi göster">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-login-message"
+                     id="adminLoginMessage"
+                     aria-live="polite">
+                </div>
+
+
+                <button type="submit"
+                        class="admin-login-button">
+
+                    <span>Giriş Yap</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <div class="admin-security-note">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    Bu alan yalnızca yetkilendirilmiş yönetim
+                    üyeleri tarafından kullanılabilir.
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+<p class="login-security-note">
+  Bu alan yalnızca yetkili yönetim hesabına açıktır.
+  Giriş bilgileriniz güvenli bağlantı üzerinden doğrulanır.
+</p>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="yonetici-girisi.js"></script>
+
+</body>
+</html>
